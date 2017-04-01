@@ -91,7 +91,8 @@ Si salio todo bien, en el siguiente directorio tendremos plublicada nuestra libr
           - module-data-1.0.0.aar
 ```
 
-Finalmente, para poder agregar la dependencia de nuestra librería al proyecto realizamos lo siguiente :
+Finalmente, para poder agregar la dependencia al proyecto realizamos lo siguiente :
+
 - Agregar el repositorio local
 
 ```
