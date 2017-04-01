@@ -12,7 +12,7 @@ Luego , agregamos el plugin de Maven en el "build.gradle" de nuestro módulo .
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 ```
-* No olvidar de sincronizar 
+* No olvidar sincronizar 
 
 Definimos el grupo , nombre y versión de nuestra librería
 ```
