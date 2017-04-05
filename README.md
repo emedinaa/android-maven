@@ -1,6 +1,9 @@
 # android-maven
 ## Android Maven
 
+<img src="./images/android_dev.png" height="480"> <img src="./images/android_dev.png">
+
+
 En este ejemplo veremos  como crear una dependencia de un módulo Android en un repositorio local  usando el plugin de Maven para Android.
 
 Lo primero , es crear un proyecto Android y agregar un para de módulos(librería) llamados "module-data" y "core"
@@ -72,6 +75,9 @@ dependencies {
 }
 
 ```
+Al agregar la propiedad "uploadArchives" se crea la siguiente tarea que puedes visualizar en la ventana de *gradle projects* . De donde tambien puedes ejecutarla.
+
+<img src="./images/gradle_projects.png" height="480">
 
 Para poder deployar el módulo a nuestro repositorio local  ejecutamos el comando 
 
