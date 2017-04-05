@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.emedinaa.module.core.helpers.ScreenHelper;
+import com.emedinaa.module.core.helpers.StringHelper;
+
 
 public class DemoActivity extends AppCompatActivity {
 
@@ -19,7 +22,7 @@ public class DemoActivity extends AppCompatActivity {
 
     private void app() {
         String message= "Code fun ! ";
-        /*
+
         StringHelper stringHelper= new StringHelper();
         message= stringHelper.checkNotNull(message);
 
@@ -27,6 +30,6 @@ public class DemoActivity extends AppCompatActivity {
         Point point= screenHelper.getDeviceDimention(this);
 
         Log.d(TAG, "app: "+message);
-        Log.d(TAG, "screen X "+point.x+ " screen Y "+point.y);*/
+        Log.d(TAG, "screen X "+point.x+ " screen Y "+point.y);
     }
 }

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 25
@@ -17,6 +18,18 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+group = "com.emedinaa"
+archivesBaseName = "core"
+version = "1.0.1"  //customize this for new release
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'file://' + new File(System.getProperty('user.home'),'LocalRepository').absolutePath) { }
+            //repository(url: "file://localhost/tmp/myRepo/")
         }
     }
 }

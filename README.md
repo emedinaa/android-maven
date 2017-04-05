@@ -209,6 +209,9 @@ dependencies {
 }
 ```
 
+# Updates 
+- [Coming soon] Subir tu biblioteca a repositorio externo.
+
 # Referencias
 
 - Multidex [https://developer.android.com/studio/build/multidex.html](https://developer.android.com/studio/build/multidex.html)
