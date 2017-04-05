@@ -1,10 +1,11 @@
 # android-maven
 Ejemplo de como crear una dependencia de un módulo Android en un repositorio local  usando el plugin de Maven para Android.
 
-Lo primero , es crear un proyecto Android y agregar un módulo(librería) llamado "module-data"
+Lo primero , es crear un proyecto Android y agregar un para de módulos(librería) llamados "module-data" y "core"
 
 - app
 - module-data
+- core
 
 Luego , agregamos el plugin de Maven en el "build.gradle" de nuestro módulo . 
 
@@ -89,6 +90,9 @@ Si salio todo bien, en el siguiente directorio tendremos plublicada nuestra libr
       - module-data
         - 1.0.0
           - module-data-1.0.0.aar
+      - core
+        - 1.0.0
+          - core1.0.0.aar
 ```
 
 Finalmente, para poder agregar la dependencia al proyecto realizamos lo siguiente :
@@ -145,21 +149,71 @@ dependencies {
 }
 
 ```
+** En este ejemplo , la app y los módulos están en el mismo proyecto por un tema de prácticidad pero los módulos pueden estar en un proyecto aparte.
+
+# Commandos
+
+Si estas en Linux o OSx puedes ejecutar directamente el commando.
+```
+ ./gradlew uploadArchives
+```
+
+* Tip : Si tu proyecto consta de varios módulos, puedes crear un pequeño script para que ejecute el comando en cada módulo. Por ejemplo "myScript.sh"
+
+```
+./gradlew :module-data:uploadArchives
+
+./gradlew :core:uploadArchives
+
+```
+
+# Problemas comunes
+
+Se pueden presentar algunos problemas cuando dentro de un módulo existen dependecias de librerías externas como Google Play services, Picasso o Retrofit , etc, etc. Esto tambien puede suceder si tu proyecto comience a crecer y supere el límite en la arquitecture de compilación , para esto puedes activar el multidex en tu proyecto.
+
+```
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:multidex:1.0.0'
+    testCompile 'junit:junit:4.12'
+}
+```
 
 # Referencias
 
-http://stackoverflow.com/questions/28361416/gradle-how-to-publish-a-android-library-to-local-repository
+- Multidex [https://developer.android.com/studio/build/multidex.html](https://developer.android.com/studio/build/multidex.html)
 
-https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/
+- Maven Plugin [https://docs.gradle.org/current/userguide/maven_plugin.html](https://docs.gradle.org/current/userguide/maven_plugin.html)
 
-http://stackoverflow.com/questions/40406613/gradle-dependency-from-maven-local
+# Issues
 
-https://docs.gradle.org/current/userguide/maven_plugin.html
-
-# Commands
-- ./gradlew uploadArchives
-- ./gradlew install
-
-- mkdir
-- nautilus ./
+- Cualquier issue, duda o consulta lo puede dejar en este link [https://github.com/emedinaa/android-maven/issues](https://github.com/emedinaa/android-maven/issues) y lo atenderé a la brevedad.
 

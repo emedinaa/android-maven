@@ -1,4 +1,4 @@
-package com.emedinaa.module.data;
+package com.emedinaa.module.core.helpers;
 
 /**
  * Created by eduardo on 29/11/16.

@@ -1,4 +1,4 @@
-package com.emedinaa.module.data;
+package com.emedinaa.module.core.helpers;
 
 import android.app.Activity;
 import android.content.Context;
