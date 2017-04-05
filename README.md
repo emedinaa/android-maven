@@ -1,5 +1,7 @@
 # android-maven
-Ejemplo de como crear una dependencia de un módulo Android en un repositorio local  usando el plugin de Maven para Android.
+## Android Maven
+
+En este ejemplo veremos  como crear una dependencia de un módulo Android en un repositorio local  usando el plugin de Maven para Android.
 
 Lo primero , es crear un proyecto Android y agregar un para de módulos(librería) llamados "module-data" y "core"
 
