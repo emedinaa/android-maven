@@ -1,7 +1,7 @@
 # android-maven
 ## Android Maven
 
-img src="./images/android_maven.png">
+<img src="./images/android_maven.png">
 
 
 En este ejemplo veremos  como crear una dependencia de un módulo Android en un repositorio local  usando el plugin de Maven para Android.
