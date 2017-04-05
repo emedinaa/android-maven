@@ -75,7 +75,7 @@ dependencies {
 }
 
 ```
-Al agregar la propiedad "uploadArchives" se crea la siguiente tarea que puedes visualizar en la ventana de *gradle projects* . De donde tambien puedes ejecutarla.
+Al agregar el método "uploadArchives" se crea la siguiente tarea "upload/uploadArchives"que puedes visualizar en la ventana de *gradle projects* y de donde tambien puedes ejecutarla.
 
 <img src="./images/gradle_projects.png" height="480">
 
